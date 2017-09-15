@@ -13,7 +13,7 @@ main: main.o
 main.o: main.c
 
 flash: main-0x00000.bin
-	esptool.py --baud 115200 write_flash --flash_mode dio 0 main-0x00000.bin 0x10000 main-0x10000.bin 0x3fc000 $(SDK)/bin/esp_init_data_default.bin 0x7e000 $(SDK)/bin/blank.bin 0x3fe000 $(SDK)/bin/blank.bin
+	esptool.py --baud 921600 write_flash 0 main-0x00000.bin 0x10000 main-0x10000.bin
 
 clean:
 	rm -f main main.o main-0x00000.bin main-0x10000.bin
